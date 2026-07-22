@@ -648,13 +648,7 @@ h2 {
 }
 
 @media (max-width: 1000px) {
-  .mini-arch {
-    display: none;
-  }
-}
-
-@media (max-width: 1000px) {
-  .arch-portrait {
+  .mini-arch, .arch-portrait, .film-ribbon {
     display: none;
   }
 }
