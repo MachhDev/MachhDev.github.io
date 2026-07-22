@@ -270,13 +270,15 @@ p {
 
 h1 {
   margin-bottom: 16px;
-  margin-left:-30px;
+  margin-left:10px;
   color: var(--ink);
   font-size: clamp(1.5rem, 6vw, 4rem);
   line-height: 0.86;
   letter-spacing: 0;
 }
-
+h1.name{
+  margin-left:-30px;
+}
 .accent{
   color: var(--wine);
 }
@@ -463,7 +465,7 @@ h1::after,
 
 h2 {
   color: var(--ink);
-  font-size: clamp(2.2rem, 5vw, 4.3rem);
+  font-size: clamp(2.2rem, 3vw, 4.3rem);
   line-height: 0.95;
 }
 
@@ -605,6 +607,11 @@ h2 {
   box-shadow: 5px 5px 0 var(--ink);
 }
 
+.sticky-hire:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
 .inner-page {
   padding: clamp(34px, 6vw, 70px) clamp(24px, 6vw, 70px);
 }
@@ -638,6 +645,12 @@ h2 {
   color: var(--wine);
   background: var(--paper-deep);
   font-size: 3.2rem;
+}
+
+@media (max-width: 1000px) {
+  .mini-arch {
+    display: none;
+  }
 }
 
 .catalog {
@@ -693,12 +706,16 @@ h2 {
   align-items: center;
   margin-top: 24px;
   padding: 28px;
-  background: var(--ink);
+  background: var(--line);
   color: #fff8ed;
 }
 
 .contact-panel h2 {
   color: #fff8ed;
+}
+
+.contact-panel p {
+  font-size: 20px;
 }
 
 .contact-links {
@@ -769,9 +786,7 @@ h2 {
     display: block;
   }
 
-  .mini-arch {
-    width: 112px;
-  }
+
 }
 
 @media (max-width: 860px) {
