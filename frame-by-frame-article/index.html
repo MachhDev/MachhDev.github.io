@@ -1,0 +1,1257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="From Hattie McDaniel to Sinners, Black artists have fought for access, visibility, recognition and power in American cinema."
+    />
+    <meta name="theme-color" content="#f6f1e7" />
+    <meta property="og:title" content="Beyond the Supporting Role" />
+    <meta
+      property="og:description"
+      content="How Black artists moved beyond supporting roles—and how Sinners overturns the tropes Hollywood built around them."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="./cinema-authorship-hero.webp" />
+    <title>Beyond the Supporting Role — Frame by Frame</title>
+    <style>
+      :root {
+        --paper: #f6f1e7;
+        --paper-deep: #eee5d7;
+        --ink: #171717;
+        --muted: #625d55;
+        --red: #c83f31;
+        --red-dark: #9e2e24;
+        --gold: #b9852f;
+        --line: #cec5b8;
+        --serif: Georgia, "Times New Roman", Times, serif;
+        --sans: Arial, Helvetica, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: var(--sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration-color: var(--red);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+      }
+
+      a:hover {
+        color: var(--red-dark);
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: 0.75rem;
+        left: 0.75rem;
+        padding: 0.75rem 1rem;
+        color: white;
+        background: var(--ink);
+        transform: translateY(-180%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .reading-progress {
+        position: fixed;
+        z-index: 50;
+        inset: 0 auto auto 0;
+        width: 0;
+        height: 4px;
+        background: var(--red);
+      }
+
+      .masthead {
+        border-top: 5px solid var(--red);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .masthead-inner {
+        width: min(1180px, calc(100% - 40px));
+        min-height: 76px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 1.25rem;
+      }
+
+      .brand,
+      .section-label,
+      .utility,
+      .eyebrow,
+      .meta,
+      .fact-label,
+      .caption,
+      .sources,
+      .footer {
+        font-family: var(--sans);
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .brand-mark {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 0.55rem;
+        background: var(--red);
+        border-radius: 50%;
+      }
+
+      .section-label {
+        font-size: 0.77rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .utility {
+        justify-self: end;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .utility a {
+        text-decoration: none;
+      }
+
+      .hero-copy {
+        width: min(950px, calc(100% - 40px));
+        margin: clamp(3.5rem, 8vw, 7.5rem) auto clamp(2.4rem, 5vw, 4.5rem);
+      }
+
+      .eyebrow {
+        margin: 0 0 1.15rem;
+        color: var(--red-dark);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 890px;
+        margin: 0;
+        font-family: var(--serif);
+        font-size: clamp(3.3rem, 9vw, 7.8rem);
+        font-weight: 500;
+        letter-spacing: -0.065em;
+        line-height: 0.9;
+      }
+
+      .dek {
+        max-width: 790px;
+        margin: clamp(1.8rem, 4vw, 3rem) 0 0;
+        color: #3d3933;
+        font-family: var(--serif);
+        font-size: clamp(1.28rem, 2.4vw, 1.7rem);
+        line-height: 1.42;
+      }
+
+      .episode-link {
+        width: fit-content;
+        max-width: 100%;
+        margin-top: 1.7rem;
+        padding: 0.85rem 1rem;
+        display: inline-flex;
+        gap: 0.8rem;
+        align-items: center;
+        color: var(--ink);
+        background: #f3eee5;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        line-height: 1.2;
+        text-decoration: none;
+        transition:
+          color 160ms ease,
+          background 160ms ease,
+          border-color 160ms ease;
+      }
+
+      .episode-link::before {
+        content: "▶";
+        width: 2rem;
+        height: 2rem;
+        display: grid;
+        flex: 0 0 auto;
+        place-items: center;
+        color: white;
+        background: var(--red-dark);
+        border-radius: 50%;
+        font-size: 0.65rem;
+      }
+
+      .episode-kicker {
+        color: var(--red-dark);
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .episode-title {
+        padding-left: 0.8rem;
+        border-left: 1px solid var(--line);
+      }
+
+      .episode-arrow {
+        font-size: 1rem;
+      }
+
+      .episode-link:hover,
+      .episode-link:focus-visible {
+        color: white;
+        background: var(--ink);
+        border-color: var(--ink);
+      }
+
+      .episode-link:hover .episode-kicker,
+      .episode-link:focus-visible .episode-kicker {
+        color: #f2c8bd;
+      }
+
+      .byline-row {
+        margin-top: 2rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        gap: 1.2rem;
+        align-items: center;
+      }
+
+      .meta {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.5;
+      }
+
+      .meta strong {
+        color: var(--ink);
+      }
+
+      .share-button {
+        appearance: none;
+        min-height: 42px;
+        padding: 0.7rem 1rem;
+        color: var(--ink);
+        background: transparent;
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        font: 700 0.75rem/1 var(--sans);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .share-button:hover,
+      .share-button:focus-visible {
+        color: white;
+        background: var(--ink);
+      }
+
+      .hero-figure {
+        width: min(1380px, calc(100% - 24px));
+        margin: 0 auto;
+      }
+
+      .hero-figure img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 760px;
+        object-fit: cover;
+        border-radius: 2px;
+      }
+
+      .caption {
+        max-width: 920px;
+        margin: 0.8rem auto 0;
+        color: var(--muted);
+        font-size: 0.72rem;
+        line-height: 1.45;
+      }
+
+      .article-grid {
+        width: min(1120px, calc(100% - 40px));
+        margin: clamp(3rem, 7vw, 6.5rem) auto;
+        display: grid;
+        grid-template-columns: minmax(0, 710px) minmax(220px, 290px);
+        gap: clamp(3rem, 8vw, 7rem);
+        align-items: start;
+      }
+
+      .article-body {
+        font-family: var(--serif);
+        font-size: clamp(1.14rem, 1.8vw, 1.31rem);
+        line-height: 1.76;
+      }
+
+      .article-body p {
+        margin: 0 0 1.55em;
+      }
+
+      .author-note {
+        margin: -0.3rem 0 2.2rem !important;
+        padding: 0.8rem 1rem;
+        color: var(--muted);
+        background: var(--paper-deep);
+        border-left: 3px solid var(--gold);
+        font: 700 0.77rem/1.5 var(--sans);
+        letter-spacing: 0.025em;
+      }
+
+      .article-body .lead::first-letter {
+        float: left;
+        margin: 0.08em 0.12em 0 0;
+        color: var(--red);
+        font-family: var(--serif);
+        font-size: 4.8em;
+        line-height: 0.72;
+      }
+
+      .article-body h2 {
+        margin: 3.6rem 0 1.25rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid var(--line);
+        font-family: var(--sans);
+        font-size: clamp(1.65rem, 3vw, 2.15rem);
+        letter-spacing: -0.035em;
+        line-height: 1.08;
+      }
+
+      .article-body em {
+        font-style: italic;
+      }
+
+      .pullquote {
+        margin: 3rem 0;
+        padding: 1.8rem 0 1.8rem 1.5rem;
+        border-left: 5px solid var(--red);
+        color: #2f2b26;
+        font-size: clamp(1.55rem, 3vw, 2.05rem);
+        font-style: italic;
+        line-height: 1.35;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 2rem;
+      }
+
+      .fact-panel {
+        padding: 1.4rem;
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .fact-panel h2 {
+        margin: 0 0 1.5rem;
+        font-family: var(--serif);
+        font-size: 1.7rem;
+        font-weight: 500;
+        line-height: 1.1;
+      }
+
+      .fact {
+        padding: 1.1rem 0;
+        border-top: 1px solid #4e4941;
+      }
+
+      .fact-number {
+        display: block;
+        color: #f3b650;
+        font-family: var(--serif);
+        font-size: 2.7rem;
+        line-height: 1;
+      }
+
+      .fact-label {
+        display: block;
+        margin-top: 0.45rem;
+        color: #d8d0c4;
+        font-size: 0.76rem;
+        line-height: 1.45;
+      }
+
+      .fact-note {
+        margin: 1rem 0 0;
+        color: #a9a096;
+        font-size: 0.67rem;
+        line-height: 1.5;
+      }
+
+      .sidebar-note {
+        margin-top: 1.4rem;
+        padding-top: 1rem;
+        border-top: 4px solid var(--gold);
+        color: var(--muted);
+        font-family: var(--serif);
+        font-size: 0.95rem;
+        line-height: 1.55;
+      }
+
+      .sources-wrap {
+        background: var(--paper-deep);
+        border-top: 1px solid var(--line);
+      }
+
+      .sources {
+        width: min(820px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 3.5rem 0 4.5rem;
+      }
+
+      .sources h2 {
+        margin: 0 0 0.65rem;
+        font-family: var(--serif);
+        font-size: 2rem;
+        font-weight: 500;
+      }
+
+      .sources > p {
+        margin: 0 0 1.5rem;
+        color: var(--muted);
+        font-family: var(--serif);
+        line-height: 1.55;
+      }
+
+      .sources ol {
+        margin: 0;
+        padding-left: 1.2rem;
+      }
+
+      .sources li {
+        margin: 0.8rem 0;
+        padding-left: 0.4rem;
+        font-size: 0.87rem;
+        line-height: 1.5;
+      }
+
+      .footer {
+        padding: 2.25rem 20px;
+        color: #cfc7bc;
+        background: var(--ink);
+        text-align: center;
+        font-size: 0.74rem;
+        line-height: 1.5;
+      }
+
+      .footer strong {
+        color: white;
+      }
+
+      @media (max-width: 820px) {
+        .masthead-inner {
+          grid-template-columns: 1fr auto;
+        }
+
+        .section-label {
+          display: none;
+        }
+
+        .utility a:first-child {
+          display: none;
+        }
+
+        .article-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          position: static;
+          grid-row: 1;
+        }
+
+        .fact-panel {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+        }
+
+        .fact-panel h2,
+        .fact-note {
+          grid-column: 1 / -1;
+        }
+
+        .fact {
+          padding-bottom: 0;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .masthead-inner,
+        .hero-copy,
+        .article-grid,
+        .sources {
+          width: min(100% - 28px, 1120px);
+        }
+
+        .masthead-inner {
+          min-height: 62px;
+        }
+
+        .utility {
+          font-size: 0.68rem;
+        }
+
+        .hero-copy {
+          margin-top: 2.8rem;
+        }
+
+        h1 {
+          font-size: clamp(3.15rem, 17vw, 4.6rem);
+          line-height: 0.92;
+        }
+
+        .dek {
+          font-size: 1.2rem;
+        }
+
+        .episode-link {
+          width: 100%;
+          align-items: flex-start;
+          border-radius: 18px;
+        }
+
+        .episode-kicker {
+          display: none;
+        }
+
+        .episode-title {
+          padding-left: 0;
+          border-left: 0;
+        }
+
+        .episode-arrow {
+          margin-left: auto;
+        }
+
+        .byline-row {
+          align-items: flex-start;
+        }
+
+        .hero-figure {
+          width: 100%;
+        }
+
+        .hero-figure img {
+          min-height: 320px;
+          object-position: 44% center;
+          border-radius: 0;
+        }
+
+        .caption {
+          padding: 0 14px;
+        }
+
+        .article-grid {
+          margin-top: 3rem;
+          gap: 2.5rem;
+        }
+
+        .fact-panel {
+          display: block;
+        }
+
+        .article-body {
+          font-size: 1.13rem;
+          line-height: 1.7;
+        }
+
+        .pullquote {
+          font-size: 1.45rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#article">Skip to article</a>
+    <div class="reading-progress" aria-hidden="true"></div>
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <div class="brand"><span class="brand-mark"></span>Frame by Frame</div>
+        <div class="section-label">Arts &amp; Culture</div>
+        <nav class="utility" aria-label="Article navigation">
+          <a href="#recognition">Recognition</a>
+          <a href="#sources">Sources</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="article">
+      <header class="hero-copy">
+        <p class="eyebrow">Culture · Film &amp; television</p>
+        <h1>Beyond the Supporting Role</h1>
+        <p class="dek">
+          Black artists have repeatedly transformed American screens. From
+          Hattie McDaniel to <em>Sinners</em>, Black artists have pushed for
+          more than a place on screen.
+        </p>
+        <a
+          class="episode-link"
+          href="./black-artists-in-film.mov"
+          target="_blank"
+          rel="noopener"
+          aria-label="Listen to the Black Artists in Film podcast episode"
+        >
+          <span class="episode-kicker">Podcast episode</span>
+          <span class="episode-title">Listen: Black Artists in Film</span>
+          <span class="episode-arrow" aria-hidden="true">↗</span>
+        </a>
+        <div class="byline-row">
+          <p class="meta">
+            By <strong>Maya Chelle</strong><br />
+            A 12-minute read
+          </p>
+          <button class="share-button" type="button" aria-live="polite">
+            Share
+          </button>
+        </div>
+      </header>
+
+      <figure class="hero-figure">
+        <img
+          src="./cinema-authorship-hero.webp"
+          width="1536"
+          height="1024"
+          alt="An editorial collage of a film camera and director’s chair facing silhouettes of Black creative collaborators in a projector beam."
+        />
+        <figcaption class="caption">
+          For Black artists, the question has never been only who appears on
+          screen. It is also who controls the camera, the budget and the story.
+          <em>Original illustration for Frame by Frame.</em>
+        </figcaption>
+      </figure>
+
+      <div class="article-grid">
+        <article class="article-body">
+          <p class="lead">
+            With the 98th Academy Awards now behind us,
+            <em>Sinners</em>—the acclaimed, genre-defying thriller that made
+            history with a record-breaking 16 nominations—still has everyone
+            talking. From dedicated cinema aficionados to those who only lift
+            an ear in passing when the Oscars roll around.
+          </p>
+
+          <p class="author-note">
+            Note: I am the former. Numerous film references follow.
+          </p>
+
+          <p>
+            We have been blessed with many amazing movies over the years. Just
+            last year, the musical adaptation <em>Wicked</em> triumphed on
+            Oscar night. The year before, <em>The Holdovers</em> brought us a
+            masterclass performance with a win for Da’Vine Joy Randolph. In
+            2022, <em>King Richard</em> earned a historic lead victory for Will
+            Smith, following another powerful win by Daniel Kaluuya for
+            <em>Judas and the Black Messiah</em> one year earlier.
+          </p>
+
+          <p>
+            These films all share something that, in previous generations of
+            cinema, was simply not possible: Black artists dominated the
+            screen.
+          </p>
+
+          <p>
+            In an ideal world, every win would celebrate the pure talent and
+            dedication of amazing artists indistinguishably. Anyone in the film
+            industry knows that the work comes with harsh challenges and
+            obstacles. Black artists carry the added pressure of historically
+            established discrimination.
+          </p>
+
+          <p>
+            Representation has improved, and continues to improve, in cinema.
+            The Academy Awards offer one measure of how slowly that recognition
+            has arrived.
+          </p>
+
+          <h2>Access, visibility, recognition and power</h2>
+
+          <p>
+            Looking back at history, one often shudders at the events we have
+            allowed to unfold. For too long, the world of cinema was largely
+            closed off to Black artists.
+          </p>
+
+          <p>
+            When Black actors did gain access to Hollywood, they were too often
+            given minor, demeaning or stereotypical roles: the servant, the
+            criminal, the Jezebel, the comic sidekick or the loyal friend who
+            exists mainly to help a white protagonist.
+          </p>
+
+          <p>
+            Behind the screen, Black directors, producers and screenwriters
+            struggled to produce or fund their projects. They were set apart
+            under the label “Black cinema.”
+          </p>
+
+          <p>
+            Racism within the industry has repeatedly barred the way for their
+            stories.
+          </p>
+
+          <p>
+            Representation seemed to mean strategically placing a few Black
+            faces on screen and calling it diverse. Society today knows better.
+            Representation means having a seat in the room—a voice. It means
+            deciding which stories are told and crafting characters that are
+            full, rounded and real.
+          </p>
+
+          <blockquote class="pullquote">
+            Cinema represents a mirror of our past, present and future—of our
+            shared humanity. It inspires so many. What appears on screen shapes
+            our knowledge of the past, our perception of the present and our
+            hopes for the future.
+          </blockquote>
+
+          <h2>One step forward…</h2>
+
+          <p>
+            By the late 1980s, a new generation of Black filmmakers was forcing
+            Hollywood to widen its frame.
+          </p>
+
+          <p>
+            After a decade of unequal representation, with major releases such
+            as <em>Superman</em>, <em>Airplane!</em> and
+            <em>Dressed to Kill</em> built around largely white ensembles, it
+            was time for a change.
+          </p>
+
+          <p>
+            Spike Lee’s <em>Do the Right Thing</em>, released in 1989, placed
+            the racial tensions of a Brooklyn neighborhood at the center of
+            the American cinematic conversation. It was followed by an
+            extraordinary period of creative activity. In 1991, with
+            <em>Boyz n the Hood</em>, John Singleton became the first Black
+            filmmaker—and the youngest person—to receive an Academy Award
+            nomination for best director.
+          </p>
+
+          <p>
+            Julie Dash’s <em>Daughters of the Dust</em> became the first
+            feature directed by a Black woman to receive a general theatrical
+            release in the United States. Films including
+            <em>New Jack City</em>, <em>House Party</em>,
+            <em>Devil in a Blue Dress</em> and <em>Malcolm X</em> expanded the
+            range of Black stories reaching mainstream audiences.
+          </p>
+
+          <p>
+            Television experienced its own boom.
+            <em>A Different World</em>, <em>Living Single</em>,
+            <em>The Fresh Prince of Bel-Air</em>, <em>Martin</em>,
+            <em>Moesha</em> and <em>In Living Color</em> presented Black
+            families, friendships and ambitions with a breadth rarely seen on
+            network television. These programs had richness beyond traditional
+            stereotypes. Each was different; Black life was being portrayed
+            not as a genre, but as life.
+          </p>
+
+          <p>
+            In the 1990s, “Black cinema”—or what Hollywood labeled as
+            such—became a defining trend of the decade. Acclaimed director Spike
+            Lee was at the center. Denzel Washington played Don Pedro in
+            <em>Much Ado About Nothing</em>, Will Smith became a Black action
+            hero in <em>Bad Boys</em>, and doors opened.
+          </p>
+
+          <p>
+            Yet after the commotion surrounding that moment faded, many Black
+            actors and filmmakers were compartmentalized once again. The
+            performers who had “made it” in mainstream Hollywood were still
+            pushed toward stereotypical roles. Many of the directors, writers
+            and producers who had helped create the boom were left behind.
+          </p>
+
+          <p>
+            Julie Dash’s experience showed the limits of the breakthrough.
+            Despite the acclaim for her <em>Daughters of the Dust</em>, she did
+            not direct another theatrical feature for decades. The label “Black
+            cinema” recognized the artistic movement while serving as
+            confinement. Hollywood continued to treat films by Black directors
+            as a specialized category rather than as cinema itself.
+          </p>
+
+          <h2>Present, but not at the center</h2>
+
+          <p>
+            Even when Black actors gained access to the biggest levels of the
+            film industry, Hollywood still gave them minor, demeaning and
+            stereotypical parts.
+          </p>
+
+          <p>
+            Black performers continued to be cast in roles that were simply
+            there to support the main white actor. The industry was becoming
+            more diverse on screen without necessarily creating what the
+            original debate called a true “Black story”: a story in which
+            Black characters possessed their own depth, choices and point of
+            view.
+          </p>
+
+          <p>
+            The stereotypes are familiar: the maid; the jezebel, or
+            hypersexualized woman; the thug; the “sapphire,” a caricature of the
+            angry Black woman; the best friend; and the “magical Negro,” whose
+            special insight exists mainly to rescue or transform a white
+            protagonist. Different stories, different details, same function.
+            The Black character helps complete someone else’s journey.
+          </p>
+
+          <p>
+            Movies have also repeatedly diminished the image of Black people
+            through white-congratulatory storylines. In white-savior narratives,
+            racial injustice becomes the setting for a white character’s moral
+            awakening. Films such as <em>The Help</em>,
+            <em>Freedom Writers</em> and <em>The Blind Side</em> brought race to
+            wide audiences, but often placed white benevolence at the emotional
+            center of Black struggle.
+          </p>
+
+          <p>
+            The issue is not that Black characters must always be heroic, or
+            that only Black filmmakers may portray Black life. Art requires
+            freedom, contradiction and imagination. The problem arises when a
+            narrow group of gatekeepers repeatedly decides which portrayals
+            are universal, which are marketable and which will never reach the
+            screen.
+          </p>
+
+          <p>
+            A 2015 UCLA study illustrated the concentration of that power.
+            Among the 18 major studios it examined, 94 percent of chairpersons
+            and chief executives were white, and all were men. Senior
+            management was 92 percent white.
+          </p>
+
+          <p>
+            These are the people deciding which scripts to green-light, which
+            films to fund and whom to cast. If Black artists, who know their
+            communities and their stories, are barred by a mainly white
+            executive class, it is no wonder that the industry returns to
+            familiar stereotypes even while its casts appear more diverse.
+          </p>
+
+          <p>
+            Cicely Tyson broke barriers in 1963 as one of the first Black
+            actors to appear regularly in a TV drama,
+            <em>East Side/West Side</em>. An advocate and humanitarian, she
+            built a career portraying strong Black women across film,
+            television and theater. After taking several
+            stereotypical roles early in her career, she began refusing parts
+            that demeaned Black women. This could have cost her career. Through
+            <em>Sounder</em>,
+            <em>The Autobiography of Miss Jane Pittman</em> and
+            <em>Roots</em>, Tyson helped people feel represented and more
+            comfortable in their own skin. Her career became an argument for
+            roles that could better humanity—and the image of the Black
+            community.
+          </p>
+
+          <p>
+            Others followed: Denzel Washington, Angela Bassett, Will Smith,
+            Samuel L. Jackson, Whoopi Goldberg and Wesley Snipes—all famous
+            actors who broke through those limits, taking roles that once would
+            have been largely unavailable to them.
+          </p>
+
+          <h2 id="recognition">Recognition</h2>
+
+          <p>
+            So what of the Oscars? Even after reaching the highest levels of the
+            industry, recognition was sparse.
+          </p>
+
+          <p>
+            In 1940, Hattie McDaniel became the first Black person to win an
+            Oscar, receiving the supporting-actress award for playing Mammy in
+            <em>Gone With the Wind</em>. The achievement was historic, but it
+            also embodied Hollywood’s contradictions: McDaniel was honored for
+            a stereotyped role in a segregated industry, and she was seated
+            separately from her white colleagues during the ceremony.
+          </p>
+
+          <p>
+            Twenty-four years passed before Sidney Poitier became the first
+            Black performer to win the Oscar for best actor, for
+            <em>Lilies of the Field</em>. His victory did not open the
+            floodgates. For generations, Black performers and filmmakers
+            remained rare among Oscar nominees and even rarer among winners.
+            They made it, but the gates kept them from the top.
+          </p>
+
+          <p>
+            In 2015, activist April Reign captured that frustration in a
+            hashtag: <strong>#OscarsSoWhite</strong>. Her phrase became a
+            social-justice campaign after the Academy nominated an
+            overwhelmingly white group of actors for its major awards. The
+            campaign addressed precisely this issue, calling out racial and
+            gender inequality in the Academy’s nominations and awards. When the
+            same pattern recurred the next year, the criticism grew into an
+            industry-wide debate about whose work receives prestige, promotion
+            and serious consideration.
+          </p>
+
+          <p>
+            Awards are not the only measure of success, but they affect careers
+            in real ways. Salaries, offers, access—recognition helps determine
+            who is seen as an artist worth investing in.
+          </p>
+
+          <h2>Progress</h2>
+
+          <p>
+            The racial injustice within film and television is now being
+            addressed more openly. Prominent figures use their influence
+            to inform the public about systemic racism throughout society,
+            including in the entertainment industry. Black actors, directors
+            and producers have been pushing the way forward, creating a space
+            in film for people of color, their cultures and their perspectives.
+          </p>
+
+          <p>
+            Spike Lee continued making politically confrontational work long
+            after the industry’s first enthusiasm for the “Black film boom” had
+            passed. Filmmakers such as Ryan Coogler, Barry Jenkins, Regina King
+            and Shaka King expanded the scale and vocabulary of contemporary
+            Black cinema. Shonda Rhimes reshaped network television with shows
+            built around complicated women and multiracial casts.
+          </p>
+
+          <p>
+            Performers including Chadwick Boseman, Viola Davis and Daniel
+            Kaluuya portrayed Black characters whose lives were intimate,
+            contradictory and fully their own.
+            <em>Moonlight</em>, <em>Black Panther</em>,
+            <em>Sylvie’s Love</em>, <em>Ma Rainey’s Black Bottom</em> and
+            <em>Judas and the Black Messiah</em> showed that there could be no
+            single Black story—and no single kind of Black audience. They
+            redefined profitability, marketability and what stories are “worth
+            telling.”
+          </p>
+
+          <p>
+            Groups such as Astronomy Club have addressed these issues through
+            comedy, in sketches including “Magical Negro Rehab” and “The
+            Audition.” By imagining a rehabilitation program for Black
+            characters exhausted from solving white people’s problems, the
+            group made the stereotype visible. The joke works because the
+            convention is so recognizable.
+          </p>
+
+          <p>
+            For those who want to explore the subject further, the documentary
+            series <em>They’ve Gotta Have Us</em> addresses this exact issue.
+            Created by British photographer and filmmaker Simon Frederick, it
+            examines pivotal moments in Black film history that paved the way
+            for African American and Black British artists to achieve
+            mainstream success. Through interviews with actors, producers and
+            directors, the series captures their struggle to move Hollywood’s
+            portrayals of Black people away from simple stereotypes.
+          </p>
+
+          <p>
+            Black artists have never lacked stories, talent or ambition. What
+            they have too often lacked is equal access to the system that turns
+            an idea into a production—access to the system that recognizes and
+            monetizes art.
+          </p>
+
+          <p>
+            The future of representation depends on the authority to write,
+            direct and finance a broad range of stories.
+          </p>
+
+          <h2><em>Sinners</em>—a stereotype on its head</h2>
+
+          <p>
+            That brings the story back to <em>Sinners</em>. The film subverts
+            nearly every trope that once limited Black characters. Its central
+            figures, Smoke and Stack, are criminals—but they are not stock
+            “thugs.” They are brothers with charm, grief, loyalties, love and
+            moral consequence. Their criminal past enhances their humanity.
+          </p>
+
+          <p>
+            Sammie possesses an almost supernatural musical gift, but he is not
+            the old “magical Negro,” placed in the story to save a white
+            protagonist. His music belongs to him, his ancestors and his
+            community. There is no white savior waiting to lead the characters
+            toward freedom. Black people own the juke joint, create the music
+            and drive the action.
+          </p>
+
+          <p>
+            They also decide whom to let through the door. Exclusion is turned
+            inside out. The white outsiders are the ones left waiting beyond
+            the threshold of a protected Black space, unable to enter until
+            they are invited. Yet this is not a simple reversal; the film never
+            fails to recognize each character’s depth and humanity. Remmick,
+            the vampires’ Irish leader, carries his own history of displacement.
+            His promise of equality and shared memory sounds compassionate,
+            even as it threatens to absorb individual identity. Added to the
+            hatred, there is a seductive form of assimilation in taking Black
+            music, Black memory and Black community while erasing the people
+            who created them.
+          </p>
+
+          <p>
+            Most importantly, <em>Sinners</em> was not a Black face
+            strategically placed inside someone else’s story. Ryan Coogler
+            wrote it, directed it and produced it. Michael B. Jordan carried
+            the screen in two leading roles. Black artists shaped the film’s
+            point of view, and the Academy recognized both the performance and
+            the authorship behind it. Access, visibility, recognition and
+            power.
+          </p>
+
+          <p>
+            This article has only scratched the surface. Remember: Black
+            history matters throughout the year—not only in February. Although
+            racial equality in film and television has improved, the fight is
+            nowhere near over.
+          </p>
+
+          <p>
+            As Julie Dash observed, many people are still waiting at the gate,
+            even as things move forward.
+          </p>
+
+          <p>
+            Now, get watching! There are many films to catch up on before the
+            next Oscars roll around. Not sure where to start? Check out this
+            list.
+          </p>
+        </article>
+
+        <aside class="sidebar" aria-label="Key historical figures">
+          <section class="fact-panel">
+            <h2>The gates, in numbers</h2>
+            <div class="fact">
+              <strong class="fact-number">94%</strong>
+              <span class="fact-label"
+                >of major-studio chairs and CEOs in UCLA’s 2015 report were
+                white.</span
+              >
+            </div>
+            <div class="fact">
+              <strong class="fact-number">24</strong>
+              <span class="fact-label"
+                >years passed between Hattie McDaniel’s Oscar and Sidney
+                Poitier’s best-actor win.</span
+              >
+            </div>
+            <div class="fact">
+              <strong class="fact-number">6.5%</strong>
+              <span class="fact-label"
+                >of broadcast-scripted lead roles in the 2012–13 season were
+                held by minority actors, according to UCLA’s 2015 report.</span
+              >
+            </div>
+            <div class="fact">
+              <strong class="fact-number">1</strong>
+              <span class="fact-label"
+                >film in 2025’s highest streaming-budget range featured women
+                of color in leading roles, according to UCLA’s 2026 report.</span
+              >
+            </div>
+            <p class="fact-note">
+              Historical figures are dated and attributed in the source notes
+              below.
+            </p>
+          </section>
+          <p class="sidebar-note">
+            <strong>Listen to our podcast episode</strong><br />
+            Hosted by Sabine Ocana and Maya Chelle.
+          </p>
+        </aside>
+      </div>
+
+      <div class="sources-wrap">
+        <section class="sources" id="sources">
+          <h2>Sources and further listening</h2>
+          <p>
+            The reporting draws primarily on the research assembled for the
+            original podcast, with institutional records used to verify key
+            milestones.
+          </p>
+          <ol>
+            <li>
+              <a
+                href="https://www.oscars.org/oscars/ceremonies/2026"
+                rel="noreferrer"
+                >Academy of Motion Picture Arts and Sciences: nominees and
+                winners of the 98th Academy Awards</a
+              >
+            </li>
+            <li>
+              Academy ceremony archives:
+              <a
+                href="https://www.oscars.org/oscars/ceremonies/2025"
+                rel="noreferrer"
+                >2025</a
+              >,
+              <a
+                href="https://www.oscars.org/oscars/ceremonies/2024"
+                rel="noreferrer"
+                >2024</a
+              >,
+              <a
+                href="https://www.oscars.org/oscars/ceremonies/2022"
+                rel="noreferrer"
+                >2022</a
+              >
+              and
+              <a
+                href="https://www.oscars.org/oscars/ceremonies/2021"
+                rel="noreferrer"
+                >2021</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://apnews.com/article/2096a21ac759384a930fa1140348fd74"
+                rel="noreferrer"
+                >The Associated Press: Ryan Coogler on the blues, vampires and
+                the Black community at the center of <em>Sinners</em></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.theguardian.com/film/2016/oct/13/do-the-right-thing-how-black-cinema-rose-again"
+                rel="noreferrer"
+                >The Guardian: “Black films matter—how African American cinema
+                fought back against Hollywood”</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.aljazeera.com/news/2021/1/29/groundbreaking-emmy-and-tony-winner-actress-cicely-tyson-dies"
+                rel="noreferrer"
+                >Al Jazeera: Cicely Tyson’s life, career and refusal of
+                demeaning roles</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://socialsciences.ucla.edu/wp-content/uploads/2024/06/2015-Hollywood-Diversity-Report-2-25-15.pdf"
+                rel="noreferrer"
+                >UCLA: 2015 Hollywood Diversity Report</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://socialsciences.ucla.edu/hollywood-diversity-report-2026/"
+                rel="noreferrer"
+                >UCLA: 2026 Hollywood Diversity Report on streaming film</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.nytimes.com/2020/02/06/movies/oscarssowhite-history.html"
+                rel="noreferrer"
+                >The New York Times: the history of #OscarsSoWhite</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.oscars.org/oscar/ceremonies/1964/memorable-moments"
+                rel="noreferrer"
+                >Academy of Motion Picture Arts and Sciences: Sidney Poitier’s
+                1964 milestone</a
+              >
+            </li>
+          </ol>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <strong>Frame by Frame</strong><br />
+      An independent culture feature by Maya Chelle.
+    </footer>
+
+    <script>
+      const progress = document.querySelector(".reading-progress");
+      const shareButton = document.querySelector(".share-button");
+
+      const updateProgress = () => {
+        const scrollable =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const value = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+        progress.style.width = `${Math.min(100, Math.max(0, value))}%`;
+      };
+
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      updateProgress();
+
+      shareButton.addEventListener("click", async () => {
+        const shareData = {
+          title: document.title,
+          text: document.querySelector(".dek").textContent.trim(),
+          url: window.location.href,
+        };
+
+        try {
+          if (navigator.share) {
+            await navigator.share(shareData);
+          } else {
+            await navigator.clipboard.writeText(window.location.href);
+            shareButton.textContent = "Link copied";
+            window.setTimeout(() => {
+              shareButton.textContent = "Share";
+            }, 1800);
+          }
+        } catch (error) {
+          if (error.name !== "AbortError") {
+            shareButton.textContent = "Try again";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

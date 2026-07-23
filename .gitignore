@@ -1,8 +1,48 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+# Operating-system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor and IDE settings
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.suo
+*.user
+*.swp
+*.swo
+*~
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.parcel-cache/
+
+# Logs, temporary files and local backups
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.download
+tmp/
+temp/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Saved browser-page artifacts that are not part of the portfolio
+/assets/Idiomatic_README.html
+/assets/Idiomatic_README_files/
+
+# Duplicate local import bundle; the published article lives at the site root
+/assets/frame-by-frame-article/
