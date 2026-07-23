@@ -1,33 +1,20 @@
 const portrait = document.querySelector(".arch-portrait");
 const rotatingCta = document.querySelector("[data-rotating-cta]");
 
+//dynamic CTA box
 const ctaLines = [
-  "Give me the brief. I will make it sing.",
-  "Hiring? I am unusually useful.",
-  "Need story, strategy, and polish? Say hello.",
+  "Give me the story. I will make it sing.",
+  "Working on a project? Let me help!",
+  "Need it done quickly? I got this.",
   "Contact me before another team does."
 ];
 
 let ctaIndex = 0;
 
-function wink() {
-  if (!portrait) return;
-  portrait.classList.remove("is-winking");
-  window.requestAnimationFrame(() => {
-    portrait.classList.add("is-winking");
-  });
-}
-
 function rotateCta() {
   if (!rotatingCta) return;
   ctaIndex = (ctaIndex + 1) % ctaLines.length;
   rotatingCta.textContent = ctaLines[ctaIndex];
-}
-
-if (portrait) {
-  portrait.addEventListener("mouseenter", wink);
-  portrait.addEventListener("click", wink);
-  window.setInterval(wink, 5200);
 }
 
 if (rotatingCta) {
@@ -43,6 +30,7 @@ document.querySelectorAll(".project-card").forEach((card) => {
   });
 });
 
+//hamburger menu
 document.querySelectorAll(".page-header").forEach((header) => {
   const toggle = header.querySelector(".menu-toggle");
   const nav = header.querySelector(".nav-tabs");

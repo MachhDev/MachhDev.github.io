@@ -1,0 +1,3 @@
+performance.mark("js-parse-end:aria-live-e19e787d92ce5691.js");
+"use strict";(globalThis.rspackChunk_github_ui_github_ui=globalThis.rspackChunk_github_ui_github_ui||[]).push([[33748],{946679(i,t,e){var u=e(147966);function n(i,t){r((i.getAttribute("aria-label")||i.innerText||"").trim(),{...t,element:t?.element??i})}function r(i,t){let{assertive:e,element:n}=t??{};try{let t=n?.isConnected?n:u.XC;t&&t.ariaNotify(i,{priority:e?"high":"normal"})}catch{}}e(789272),e.d(t,{C:()=>n,i:()=>r})}}]);
+//# sourceMappingURL=aria-live-e19e787d92ce5691-94d587af68659480.js.map
