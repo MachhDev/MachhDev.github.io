@@ -648,7 +648,7 @@ h2 {
 }
 
 @media (max-width: 1000px) {
-  .mini-arch, .arch-portrait, .film-ribbon {
+  .mini-arch, .portrait-stage, .arch-portrait, .film-ribbon {
     display: none;
   }
 }
