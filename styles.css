@@ -905,7 +905,7 @@ h2 {
 }
 
 .article-header {
-  width: min(860px, 100%);
+  width: min(920px, 100%);
   margin: 0 auto 23px;
   padding-bottom: 18px;
   border-bottom: 2px solid var(--line);
@@ -932,12 +932,22 @@ h2 {
   content: none;
 }
 
+.article-page .article-headline {
+  max-width: 900px;
+  margin: 0 0 18px;
+  font-family: "Garamond", "Baskerville", "Times New Roman", serif;
+  font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+}
+
 .article-deck {
-  max-width: 740px;
-  margin-bottom: 16px;
+  max-width: 720px;
+  margin-bottom: 20px;
   color: #49382f;
-  font-size: clamp(1rem, 1.25vw, 1.16rem);
-  line-height: 1.37;
+  font-size: clamp(1.08rem, 1.5vw, 1.28rem);
+  line-height: 1.5;
 }
 
 .article-byline {
@@ -953,14 +963,25 @@ h2 {
 }
 
 .article-body {
-  width: min(720px, 100%);
+  width: min(700px, 100%);
   margin: 0 auto;
 }
 
 .article-body p {
-  margin-bottom: 1.25em;
-  font-size: clamp(1.08rem, 1.7vw, 1.24rem);
-  line-height: 1.67;
+  margin: 0 0 1.4em;
+  font-size: clamp(1.1rem, 1.55vw, 1.28rem);
+  line-height: 1.78;
+}
+
+.article-body p + p {
+  margin-top: 0.15em;
+}
+
+.article-body sub {
+  position: relative;
+  bottom: -0.15em;
+  font-size: 0.7em;
+  line-height: 0;
 }
 
 .article-body .dateline::first-letter {
@@ -993,21 +1014,29 @@ h2 {
 
 .article-figure figcaption,
 .article-gallery figcaption {
-  margin-top: 12px;
+  max-width: 760px;
+  margin: 13px auto 0;
   color: #59453a;
-  font-size: 0.88rem;
-  line-height: 1.45;
+  font-family: Arial, sans-serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  line-height: 1.55;
 }
 
 .article-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
+  gap: 30px;
   width: min(1040px, 100%);
   margin: 48px auto;
   padding: 28px 0;
   border-top: 2px solid var(--line);
   border-bottom: 2px solid var(--line);
+}
+
+.article-gallery figcaption {
+  margin-top: 10px;
+  font-size: 0.72rem;
 }
 
 .article-gallery figure {
@@ -1186,6 +1215,33 @@ h2 {
   .article-page .nav-tabs a {
     width: 100%;
     border-top: 1px solid rgba(58, 43, 36, 0.28);
+  }
+
+  .article-page .article-headline {
+    margin-bottom: 14px;
+    font-size: clamp(2.55rem, 13vw, 4.4rem);
+    line-height: 0.94;
+  }
+
+  .article-page .article-deck {
+    font-size: 1.08rem;
+    line-height: 1.55;
+  }
+
+  .article-page .article-body {
+    width: min(100%, 39rem);
+  }
+
+  .article-page .article-body p {
+    margin-bottom: 1.25em;
+    font-size: 1.08rem;
+    line-height: 1.72;
+  }
+
+  .article-page .article-figure figcaption,
+  .article-page .article-gallery figcaption {
+    font-size: 0.74rem;
+    line-height: 1.5;
   }
 }
 
