@@ -883,6 +883,27 @@ h2 {
   padding: clamp(21px, 3.4vw, 40px) clamp(20px, 6vw, 70px) 70px;
 }
 
+.article-page .reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 4px;
+  background: rgba(58, 43, 36, 0.14);
+  pointer-events: none;
+}
+
+.article-page .reading-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--wine);
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+}
+
 .article-header {
   width: min(860px, 100%);
   margin: 0 auto 23px;

@@ -50,4 +50,19 @@ document.querySelectorAll(".page-header").forEach((header) => {
       toggle.setAttribute("aria-label", "Open navigation menu");
     });
   });
+
+  const readingProgress = document.querySelector(".reading-progress span");
+
+  function updateReadingProgress() {
+    if (!readingProgress) return;
+    const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollRange > 0 ? Math.min(window.scrollY / scrollRange, 1) : 0;
+    readingProgress.style.transform = `scaleX(${progress})`;
+  }
+
+  if (readingProgress) {
+    window.addEventListener("scroll", updateReadingProgress, { passive: true });
+    window.addEventListener("resize", updateReadingProgress);
+    updateReadingProgress();
+  }
 });
